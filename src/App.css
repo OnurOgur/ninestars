@@ -96,6 +96,7 @@ p.lead {
   border-color: #eb5d1e;
 }
 .btn:focus {
+  color: white;
   background-color: #eb5d1e;
   border-color: #eb5d1e;
   box-shadow: 0 0 0 0.25rem rgba(235, 93, 30, 0.5);

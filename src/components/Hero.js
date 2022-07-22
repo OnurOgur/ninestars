@@ -17,7 +17,7 @@ function Hero() {
                             <div className={isVisible ? "animate__animated animate__fadeInLeft" : null}>
                                 <h1>{t('mainHeader')}</h1>
                                 <p className="lead">{t('mainP')}</p>
-                                <button id="#getStarted" className="btn btn-md-lg">{t('getStarted')}</button>
+                                <button id="#aboutUs" className="btn btn-md-lg">{t('getStarted')}</button>
                             </div>
                             }
                         </TrackVisibility>
