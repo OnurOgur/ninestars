@@ -1,10 +1,10 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import Accordion from 'react-bootstrap/Accordion';
 import $ from 'jquery';
-
+import { useTranslation } from 'react-i18next';
 
 function Faq() {
-
+    const { t } = useTranslation();
     const $ddBtn = $('.accordion-header')
     const $dd = $($ddBtn.data('bs-toggle'))
     $ddBtn.on('click', () => {
@@ -15,69 +15,29 @@ function Faq() {
         <Container>
             <Row>
                 <Col>
-                    <h3 className='text-center'>F.A.Q</h3>
-                    <h2 className='text-center'>Frequently Asked Questions</h2>
+                    <h3 className='text-center'>{t('faq')}</h3>
+                    <h2 className='text-center'>{t('faqH2')}</h2>
                     <div className="line"></div>
                     <Accordion defaultActiveKey="0" flush>
                         <Accordion.Item eventKey="0">
-                            <Accordion.Header>Accordion Item 1</Accordion.Header>
-                            <Accordion.Body>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                culpa qui officia deserunt mollit anim id est laborum.
-                            </Accordion.Body>
+                            <Accordion.Header>{t('faq1')}</Accordion.Header>
+                            <Accordion.Body>{t('faq1Desc')}</Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="1">
-                            <Accordion.Header>Accordion Item 2</Accordion.Header>
-                            <Accordion.Body>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                culpa qui officia deserunt mollit anim id est laborum.
-                            </Accordion.Body>
+                            <Accordion.Header>{t('faq2')}</Accordion.Header>
+                            <Accordion.Body>{t('faq2Desc')}</Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="2">
-                            <Accordion.Header>Accordion Item 3</Accordion.Header>
-                            <Accordion.Body>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                culpa qui officia deserunt mollit anim id est laborum.
-                            </Accordion.Body>
+                            <Accordion.Header>{t('faq3')}</Accordion.Header>
+                            <Accordion.Body>{t('faq3Desc')}</Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="3">
-                            <Accordion.Header>Accordion Item 4</Accordion.Header>
-                            <Accordion.Body>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                culpa qui officia deserunt mollit anim id est laborum.
-                            </Accordion.Body>
+                            <Accordion.Header>{t('faq4')}</Accordion.Header>
+                            <Accordion.Body>{t('faq4Desc')}</Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="4">
-                            <Accordion.Header>Accordion Item 5</Accordion.Header>
-                            <Accordion.Body>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                culpa qui officia deserunt mollit anim id est laborum.
-                            </Accordion.Body>
+                            <Accordion.Header>{t('faq5')}</Accordion.Header>
+                            <Accordion.Body>{t('faq5Desc')}</Accordion.Body>
                         </Accordion.Item>
                     </Accordion>
                 </Col>

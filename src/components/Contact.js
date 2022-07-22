@@ -3,10 +3,12 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { BsFillGeoAltFill, BsEnvelope, BsTelephone } from "react-icons/bs";
-import React, { useRef } from 'react';
+import React, { useRef }  from 'react';
 import emailjs from '@emailjs/browser';
+import { useTranslation } from 'react-i18next';
 
 function Contact() {
+    const { t } = useTranslation();
     const form = useRef();
 
     function sendEmail(e) {
@@ -25,8 +27,8 @@ function Contact() {
         <Container>
             <Row>
                 <Col sm={12} className="text-center">
-                    <h3>Contact Us</h3>
-                    <h2>Contact us the get started</h2>
+                    <h3>{t('contactUs')}</h3>
+                    <h2>{t('contactUsH2')}</h2>
                     <div className="line"></div>
                 </Col>
                 <Col md={5}>
@@ -35,22 +37,22 @@ function Contact() {
                             <li>
                                 <a href="/"><BsFillGeoAltFill /></a>
                                 <div>
-                                    <h5>Location:</h5>
-                                    <span>A108 Adam Street, New York, NY 535022</span>
+                                    <h5>{t('location')}:</h5>
+                                    <span>A108 Adam Street <br />New York, NY 535022 <br/>United States</span>
                                 </div>
                             </li>
                             <li>
                                 <a href="mailto:info@example.com"><BsEnvelope /></a>
                                 <div>
-                                    <h5>Email:</h5>
-                                    <a href="mailto:info@example.com">info@example.com</a>
+                                    <h5>{t('email')}:</h5>
+                                    <a href="mailto:info@example.com">{t('emailDesc')}</a>
                                 </div>
                             </li>
                             <li>
                                 <a href="tel:+155895548855"><BsTelephone /></a>
                                 <div>
-                                    <h5>Call:</h5>
-                                    <a href="tel:+155895548855">+1 5589 55488 55</a>
+                                    <h5>{t('call')}:</h5>
+                                    <a href="tel:+155895548855">{t('callNumber')}</a>
                                 </div>
                             </li>
                         </ul>
@@ -62,34 +64,34 @@ function Contact() {
                         <Row>
                             <Col md={6}>
                                 <Form.Group className="mb-3">
-                                    <Form.Label>Your Name</Form.Label>
-                                    <Form.Control name="name" type="text" placeholder="Your Name" required />
+                                    <Form.Label>{t('yourName')}</Form.Label>
+                                    <Form.Control name="name" type="text" placeholder={t('yourName')} required />
                                 </Form.Group>
                             </Col>
                             <Col md={6}>
                                 <Form.Group className="mb-3">
-                                    <Form.Label>Your Email</Form.Label>
-                                    <Form.Control name="user_email" type="email" placeholder="Your Email" required />
+                                    <Form.Label>{t('yourEmail')}</Form.Label>
+                                    <Form.Control name="user_email" type="email" placeholder={t('yourEmail')} required />
                                 </Form.Group>
                             </Col>
                             <Col md={12}>
                                 <Form.Group className="mb-3">
-                                    <Form.Label>Subject</Form.Label>
-                                    <Form.Control name="subject" type="text" placeholder="Subject" required />
+                                    <Form.Label>{t('subject')}</Form.Label>
+                                    <Form.Control name="subject" type="text" placeholder={t('subject')} required />
                                 </Form.Group>
                             </Col>
                             <Col md={12}>
-                                <FloatingLabel name="message" label="Comments" required>
+                                <FloatingLabel name="message" label={t('message')} required>
                                     <Form.Control
                                     name="message" 
                                     as="textarea"
-                                    placeholder="Leave a comment here"
+                                    placeholder={t('message')}
                                     style={{ height: '250px' }}
                                     />
                                 </FloatingLabel>
                             </Col>
                             <Col md={12} className="text-center mt-4">
-                                <Button variant="primary" type="submit">Send Message</Button>
+                                <Button variant="primary" type="submit">{t('sendMessage')}</Button>
                             </Col>
                         </Row>
                     </Form>

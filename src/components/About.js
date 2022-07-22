@@ -4,8 +4,11 @@ import { BsReceipt } from 'react-icons/bs';
 import { IoCubeOutline } from "react-icons/io5";
 import "animate.css";
 import TrackVisibility from 'react-on-screen';
+import { useTranslation } from 'react-i18next';
 
 function About() {
+    const { t } = useTranslation();
+    
     return (
         <section id="about" className="about section-padding">
             <Container>
@@ -23,18 +26,18 @@ function About() {
                         <TrackVisibility once>
                             {({ isVisible }) => isVisible &&
                                 <div className={isVisible ? "animate__animated animate__fadeInUp" : null}>
-                                    <h2>About Us</h2>
-                                    <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit</p>
+                                    <h2>{t('aboutUs')}</h2>
+                                    <p className="lead">{t('aboutText')}</p>
                                     <Row>
                                         <Col md={6}>
                                             <BsReceipt className="icon" />
-                                            <h5>Corporis voluptates sit</h5>
-                                            <p className="lead">Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                                            <h5>{t('design')}</h5>
+                                            <p className="lead">{t('designDesc')}</p>
                                         </Col>
                                         <Col md={6}>
                                             <IoCubeOutline className="icon" />
-                                            <h5>Ullamco laboris nisi</h5>
-                                            <p className="lead">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                                            <h5>{t('development')}</h5>
+                                            <p className="lead">{t('developmentDesc')}</p>
                                         </Col>
                                     </Row>
                                 </div>

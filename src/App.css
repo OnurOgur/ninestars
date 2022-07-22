@@ -132,6 +132,64 @@ header .menu-toggler svg {
   right: 0;
   font-size: 28px;
 }
+header .lang-menu {
+  position: absolute;
+  top: 8px;
+  right: -90px;
+  font-size: 12px;
+}
+@media screen and (max-width: 768px) {
+  header .lang-menu {
+    position: initial;
+    margin: 1px 0 0 40px;
+  }
+  header .lang-menu ul {
+    position: absolute;
+    z-index: 6;
+  }
+  header .lang-menu ul.active {
+    display: block;
+  }
+}
+header .lang-menu img {
+  max-width: 26px;
+  margin-right: 5px;
+}
+header .lang-menu span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+}
+@media screen and (max-width: 768px) {
+  header .lang-menu span {
+    margin-left: -1px;
+  }
+}
+header .lang-menu ul {
+  display: none;
+  padding: 5px 0;
+  box-shadow: rgba(0, 0, 0, 0.1019607843) 0px 10px 50px;
+  background-color: white;
+  width: 80px;
+}
+header .lang-menu ul li {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 15px;
+}
+header .lang-menu ul li:hover {
+  opacity: 0.7;
+}
+@media screen and (min-width: 768px) {
+  header .lang-menu:hover ul {
+    display: block;
+  }
+}
+header nav {
+  position: relative;
+}
 @media screen and (max-width: 768px) {
   header nav {
     position: absolute;
@@ -271,6 +329,7 @@ header nav > ul li ul.dropdown-list a {
   box-shadow: rgba(0, 0, 0, 0.1019607843) 0px 10px 50px;
   border-radius: 20px;
   transition: 0.3s;
+  min-height: 250px;
 }
 @media screen and (max-width: 768px) {
   .services .service {
@@ -396,6 +455,9 @@ header nav > ul li ul.dropdown-list a {
 }
 .faq .accordion-button:hover {
   color: #eb5d1e;
+}
+.faq .accordion-button:hover::after {
+  filter: invert(47%) sepia(36%) saturate(2129%) hue-rotate(344deg) brightness(91%) contrast(103%);
 }
 .faq .accordion-button:not(.collapsed) {
   color: #eb5d1e;
@@ -638,7 +700,8 @@ footer {
     margin-top: 30px;
   }
 }
-footer .logo {
+footer .logo a {
+  display: block;
   font-size: 30px;
   letter-spacing: normal;
   line-height: 30px;

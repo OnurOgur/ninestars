@@ -7,8 +7,8 @@ function Card( { portfolioImg, portfolioAlt, title, description }) {
             <div className="portfolio-card">
                 <img src={portfolioImg} alt={portfolioAlt} className="img-fluid" />
                 <div className="icons">
-                    <a href="/"><FaLink /></a>
-                    <a href="/"><FaPlus /></a>
+                    <a href="#hero"><FaLink /></a>
+                    <a href="#hero"><FaPlus /></a>
                 </div>
                 <div className="content">
                     <h5>{ title }</h5>

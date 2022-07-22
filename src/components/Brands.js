@@ -9,6 +9,7 @@ import brand5 from '../assets/img/brands/client-5.png';
 import brand6 from '../assets/img/brands/client-6.png';
 import brand7 from '../assets/img/brands/client-7.png';
 import brand8 from '../assets/img/brands/client-8.png';
+import { useTranslation } from 'react-i18next';
 
 const responsive = {
     superLargeDesktop: {
@@ -30,13 +31,15 @@ const responsive = {
 };
 
 function Brands() {
+    const { t } = useTranslation(); 
+
     return (
         <section id="brands" className="brands section-padding">
             <Container>
                 <Row>
                     <Col sm={12} className="text-center">
-                        <h3>Clients</h3>
-                        <h2>They trusted us</h2>
+                        <h3>{t('clients')}</h3>
+                        <h2>{t('clientsH2')}</h2>
                         <div className="line"></div>
                     </Col>
                     <Col sm={12}>

@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Card from './Card';
 import categoryList from './categoryList';
+import { useTranslation } from 'react-i18next';
 
 function Portfolio() {
+    const { t } = useTranslation();
 
     const [items, setItems] = useState(categoryList); 
 
@@ -19,14 +21,14 @@ function Portfolio() {
             <Container>
                 <Row>
                     <Col sm={12}>
-                        <h3>Portfolio</h3>
-                        <h2>Check out our beautifull portfolio</h2>
+                        <h3>{t('portfolio')}</h3>
+                        <h2>{t('portfolioH2')}</h2>
                         <div className="line"></div>
                         <ul className="categories">
-                            <li><button onClick={() => setItems(categoryList)}>All</button></li>
-                            <li><button onClick={() => filter("app")}>App</button></li>
-                            <li><button onClick={() => filter("design")}>Design</button></li>
-                            <li><button onClick={() => filter("web")}>Web</button></li>
+                            <li><button onClick={() => setItems(categoryList)}>{t('all')}</button></li>
+                            <li><button onClick={() => filter("app")}>{t('app')}</button></li>
+                            <li><button onClick={() => filter("design")}>{t('design')}</button></li>
+                            <li><button onClick={() => filter("web")}>{t('web')}</button></li>
                         </ul>
                     </Col>
                     {

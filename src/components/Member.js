@@ -9,10 +9,10 @@ function Member({ teamImg, teamAlt, name, title }) {
                     <img src={teamImg} alt={teamAlt} className="img-fluid" />
                 </div>
                 <ul className="social-media">
-                    <li><a href="/"><BsTwitter /></a></li>
-                    <li><a href="/"><BsFacebook /></a></li>
-                    <li><a href="/"><BsInstagram /></a></li>
-                    <li><a href="/"><BsLinkedin /></a></li>
+                    <li><a href="#hero"><BsTwitter /></a></li>
+                    <li><a href="#hero"><BsFacebook /></a></li>
+                    <li><a href="#hero"><BsInstagram /></a></li>
+                    <li><a href="#hero"><BsLinkedin /></a></li>
                 </ul>
                 <div className="member-info">
                     <h5>{ name }</h5>

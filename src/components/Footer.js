@@ -1,55 +1,58 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import { BsChevronRight } from "react-icons/bs";
 import { BsTwitter, BsFacebook, BsInstagram, BsLinkedin, BsSkype } from "react-icons/bs";
+import { useTranslation } from 'react-i18next';
 
 function Footer() {
+	const { t } = useTranslation();
+
     return (
 		<footer id="footer" className="section-padding">
 			<Container>
 				<Row>
 					<Col md={3}>
-						<div className="logo">Ninestars</div>
+						<div className="logo"><a href="#hero">Ninestars</a></div>
 						<span>
-							A108 Adam Street
-							<br />New York, NY 535022
-							<br/>United States
+							A108 Adam Street<br/>
+							New York, NY 535022<br/>
+							United States
 						</span>
 						<div className="mt-4">
-							<strong>Phone:</strong><a href="tel:+155895548855"> +1 5589 55488 55</a>	
+							<strong>{t('phone')} </strong><a href="tel:+155895548855">{t('callNumber')}</a>	
 						</div>
 						<div>
-							<strong>Email:</strong><a href="mailto:info@example.com"> info@example.com</a>
+							<strong>{t('email')}: </strong><a href="mailto:info@example.com">{t('emailDesc')}</a>
 						</div>
 					</Col>
 					<Col md={3}>
-						<h5>Useful Links</h5>
+						<h5>{t('usefulLinks')}</h5>
 						<ul className="footer-menu">
-							<li><a href="/"><BsChevronRight />Home</a></li>
-							<li><a href="/"><BsChevronRight />About Us</a></li>
-							<li><a href="/"><BsChevronRight />Services</a></li>
-							<li><a href="/"><BsChevronRight />Terms of Service</a></li>
-							<li><a href="/"><BsChevronRight />Privacy Policy</a></li>
+							<li><a href="#hero"><BsChevronRight />{t('home')}</a></li>
+							<li><a href="#aboutUs"><BsChevronRight />{t('aboutUs')}</a></li>
+							<li><a href="#services"><BsChevronRight />{t('services')}</a></li>
+							<li><a href="#hero"><BsChevronRight />{t('termsOfService')}</a></li>
+							<li><a href="#hero"><BsChevronRight />{t('privacyPolicy')}</a></li>
 						</ul>
 					</Col>
 					<Col md={3}>
-						<h5>Our Services</h5>
+						<h5>{t('ourServices')}</h5>
 						<ul className="footer-menu">
-							<li><a href="/"><BsChevronRight />Web Design</a></li>
-							<li><a href="/"><BsChevronRight />Web Development</a></li>
-							<li><a href="/"><BsChevronRight />Product Management</a></li>
-							<li><a href="/"><BsChevronRight />Marketing</a></li>
-							<li><a href="/"><BsChevronRight />Graphic Design</a></li>
+							<li><a href="#hero"><BsChevronRight />{t('webDesign')}</a></li>
+							<li><a href="#hero"><BsChevronRight />{t('webDevelopment')}</a></li>
+							<li><a href="#hero"><BsChevronRight />{t('productManagement')}</a></li>
+							<li><a href="#hero"><BsChevronRight />{t('marketing')}</a></li>
+							<li><a href="#hero"><BsChevronRight />{t('graphicDesign')}</a></li>
 						</ul>
 					</Col>
 					<Col md={3}>
-						<h5>Our Social Networks</h5>
-						<p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+						<h5>{t('ourSocialNetworks')}</h5>
+						<p>{t('ourSocialNetworksDesc')}</p>
 						<ul className="social-media">
-							<li><a href="/"><BsTwitter /></a></li>
-							<li><a href="/"><BsFacebook /></a></li>
-							<li><a href="/"><BsInstagram /></a></li>
-							<li><a href="/"><BsLinkedin /></a></li>
-							<li><a href="/"><BsSkype /></a></li>
+							<li><a href="#hero"><BsTwitter /></a></li>
+							<li><a href="#hero"><BsFacebook /></a></li>
+							<li><a href="#hero"><BsInstagram /></a></li>
+							<li><a href="#hero"><BsLinkedin /></a></li>
+							<li><a href="#hero"><BsSkype /></a></li>
 						</ul>
 					</Col>
 				</Row>
@@ -57,8 +60,8 @@ function Footer() {
 			<section className="copyright py-4 bg-soft">
 				<Container>
 					<Row>
-						<Col md={6}>© Copyright <strong>Ninestars</strong>. All Rights Reserved</Col>
-						<Col md={6} className="text-md-end">Designed by <span className="text-orange">BootstrapMade</span></Col>
+						<Col md={6}>{t('copyright')}</Col>
+						<Col md={6} className="text-md-end">{t('designedBy')}</Col>
 					</Row>
 				</Container>
 			</section>
