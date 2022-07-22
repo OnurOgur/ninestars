@@ -1,0 +1,555 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap')
+
+$colorPrimary: #eb5d1e
+$softBlack: #666
+$stdLetterSpacing: .8px
+$stdShadow: #0000001a 0px 10px 50px
+$stdTransition: .3s
+
+html, body
+    font-family: 'Open Sans', sans-serif
+    overflow-x: hidden
+    scroll-behavior: smooth
+    position: relative
+
+h1, h2
+    font-weight: 700
+    letter-spacing: $stdLetterSpacing
+
+h1
+    @media screen and ( max-width: 768px )
+        font-size: 24px
+h2
+    @media screen and ( max-width: 768px )
+        font-size: 22px
+
+h4, h5, h6
+    font-weight: 600
+    letter-spacing: $stdLetterSpacing
+
+h3
+    font-size: 24px
+    font-weight: 700
+    color: #9e9e9e
+    @media screen and ( max-width: 768px )
+        font-size: 20px
+h5
+    @media screen and ( max-width: 768px )
+        font-size: 20px
+
+a, a:hover
+    color: black
+    text-decoration: none
+
+ul, li
+    margin: 0
+    padding: 0
+    list-style: none
+
+p.lead
+    font-size: 17px
+    @media screen and ( max-width: 768px )
+        font-size: 16px
+
+.section-padding
+    padding: 60px 0
+
+.bg-soft
+    background-color: #fef8f5
+
+.line
+    margin: 0 auto 50px auto
+    height: 4px
+    width: 50px
+    background-color: $colorPrimary
+
+.btn
+    color: white
+    background-color: $colorPrimary
+    border: 1px solid $colorPrimary
+    padding: 8px 20px
+    &:hover
+        color: black
+        background-color: white
+        border: 1px solid $colorPrimary
+    &:active
+        background-color: $colorPrimary
+        border-color: $colorPrimary
+    &:focus
+        background-color: $colorPrimary
+        border-color: $colorPrimary
+        box-shadow: 0 0 0 0.25rem rgb(235, 93, 30, .5)
+
+.text-orange
+    color: $colorPrimary
+
+header
+    position: relative
+    display: flex
+    align-items: center
+    padding: 15px 0
+    box-shadow: $stdShadow
+    .logo
+        font-size: 32px
+        color: $softBlack
+        letter-spacing: $stdLetterSpacing
+        @media screen and ( max-width: 768px )
+            font-size: 26px
+            line-height: 26px
+    .menu-toggler
+        position: relative
+        svg
+            position: absolute
+            top: 0
+            right: 0
+            font-size: 28px
+
+    nav
+        @media screen and ( max-width: 768px )
+            position: absolute
+            left: -100%
+            width: 100%
+            background-color: white
+            transition: $stdTransition
+            z-index: 5
+            &.active
+                left: 0
+            .menu-close
+                position: absolute
+                top: 10px
+                right: 8px
+                font-size: 35px
+        > ul
+            display: flex
+            justify-content: flex-end
+            align-items: center
+            @media screen and ( max-width: 768px )
+                flex-direction: column
+                margin-top: 30px
+                padding-bottom: 30px
+            li
+                position: relative
+                a, span
+                    padding: 5px 20px
+                    @media screen and ( max-width: 768px )
+                        display: block
+                        padding: 10px 20px
+                        font-size: 18px !important
+                        text-align: center
+                    svg
+                        font-size: 14px
+                        margin-bottom: 4px
+                    &:hover
+                        color: $colorPrimary
+                ul.dropdown-list
+                    display: none
+                    position: absolute
+                    top: 20px
+                    z-index: 3
+                    padding: 10px 0
+                    background-color: white
+                    box-shadow: $stdShadow
+                    width: 170px
+                    &.active
+                        position: initial
+                        display: block
+                        margin-left: 40px
+                    a
+                        display: block
+                &:hover ul.dropdown-list
+                    @media screen and ( min-width: 768px )
+                        display: block
+
+.hero
+    .hero-content
+        display: flex
+        flex-direction: column
+        align-self: center
+        align-items: flex-start
+        @media screen and ( max-width: 768px )
+            text-align: center
+            button
+                margin: auto
+        p.lead
+            font-size: 20px
+            @media screen and ( max-width: 768px )
+                font-size: 18px
+    .hero-img
+        padding: 30px
+        img
+            animation: upDown 1.2s infinite alternate
+
+.about
+    @media screen and ( max-width: 768px )
+        text-align: center
+        h2
+            margin-top: 30px
+    img
+        @media screen and ( min-width: 768px )
+            max-width: 550px
+    .icon
+        margin: 10px 0
+        font-size: 40px
+        color: $colorPrimary
+
+.services
+    text-align: center
+    @media screen and ( min-width: 768px )
+        height: 530px
+    .service
+        padding: 30px
+        background-color: white
+        box-shadow: $stdShadow
+        border-radius: 20px
+        transition: $stdTransition
+        @media screen and (max-width: 768px)
+            margin-bottom: 15px
+        .icon
+            font-size: 40px
+            color: $colorPrimary
+        h5
+            margin: 5px 0 10px 0
+        p.lead
+            font-size: 14px
+            line-height: 20px
+        &:hover
+            @media screen and (min-width: 768px)
+                transform: translateY(-10px)
+                border-bottom: 4px solid $colorPrimary
+
+.portfolio
+    text-align: center
+    .categories
+        display: flex
+        justify-content: center
+        margin-bottom: 30px
+        button
+            font-size: 18px
+            font-weight: 700
+            padding: 5px 15px
+            color: $softBlack
+            transition: $stdTransition
+            background-color: transparent
+            border: none
+            &:hover
+                color: $colorPrimary
+    .portfolio-card
+        position: relative
+        overflow: hidden
+        margin-bottom: 30px
+        img
+            border-radius: 10px
+        &::after
+            content: ''
+            position: absolute
+            top: 0
+            right: 0
+            z-index: 1
+            height: 100%
+            width: 0
+            background-color: #0000004d
+            border-radius: 10px
+            transition: $stdTransition
+        .icons
+            position: absolute
+            z-index: 3
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            opacity: 0
+            transition: $stdTransition
+            svg
+                color: $colorPrimary
+                border-radius: 100%
+                background-color: white
+                padding: 8px
+                width: 32px
+                height: 32px
+                margin: 5px
+                transition: $stdTransition
+                &:hover
+                    color: white
+                    background-color: $colorPrimary
+        .content
+            position: absolute
+            z-index: 3
+            bottom: -50px
+            margin: auto
+            width: 100%
+            color: white
+            transition: $stdTransition
+            opacity: 0
+        &:hover
+            .icons
+                opacity: 1
+            .content
+                opacity: 1
+                bottom: 0
+            &::after
+                width: 100%
+
+.faq
+    .accordion-button
+        font-size: 20px
+        font-weight: 600
+        color: black
+        background-color: transparent
+        padding-left: 50px
+        @media screen and ( max-width: 768px )
+            font-size: 18px
+        &:focus
+            box-shadow: none
+        &:hover
+            color: $colorPrimary
+        &:not(.collapsed)
+            color: $colorPrimary
+            &::after
+                filter: invert(47%) sepia(36%) saturate(2129%) hue-rotate(344deg) brightness(91%) contrast(103%)
+        &::after
+            position: absolute
+            left: 20px
+    .accordion-body
+        padding-left: 30px
+        @media screen and ( max-width: 768px )
+            font-size: 14px
+
+section.team .member
+    position: relative
+    overflow: hidden
+    transition: $stdTransition
+    @media screen and ( max-width: 768px )
+        margin-bottom: 30px
+    .img-wrapper
+        position: relative
+        transition: $stdTransition
+    ul.social-media
+        position: absolute
+        top: 0
+        left: -50px
+        height: 100%
+        width: 50px
+        background-color: #00000075
+        transition: $stdTransition
+        opacity: 0
+        a
+            display: block
+            padding: 10px
+            text-align: center
+            svg
+                font-size: 18px
+                color: white
+                transition: $stdTransition
+                &:hover
+                    color: $colorPrimary
+    .member-info
+        position: absolute
+        bottom: -20px
+        color: white
+        width: 100%
+        text-align: center
+        margin-left: 30px
+        z-index: 2
+        opacity: 0
+        transition: $stdTransition
+        h5
+            margin-bottom: 0
+            font-size: 18px
+        em
+            font-size: 14px
+    &:hover
+        .img-wrapper::after
+            content: ''
+            width: 100%
+            height: 100%
+            position: absolute
+            top: 0
+            left: 0
+            transition: $stdTransition
+            background: rgb(2,0,36)
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4870119922969187) 50%, rgba(0,0,0,0.6914937850140056) 100%)
+        ul.social-media
+            left: 0
+            opacity: 1
+        .member-info
+            bottom: 30px
+            opacity: 1
+
+.brands
+    @media screen and ( max-width: 768px )
+        text-align: center
+    .react-multi-carousel-track
+        margin-bottom: 20px
+        @media screen and ( max-width: 768px )
+            margin-bottom: 30px
+        img
+            max-width: 150px
+            opacity: .5
+            transition: $stdTransition
+            @media screen and ( max-width: 768px )
+                max-width: 75px
+            &:hover
+                opacity: 1
+    .react-multi-carousel-dot
+        button
+            border-color: $colorPrimary
+        &.react-multi-carousel-dot--active button
+            background: $colorPrimary
+
+section.contact
+    .contact-detail
+        padding: 30px
+        height: 100%
+        background-color: white
+        border-top: 3px solid $colorPrimary
+        border-bottom: 3px solid $colorPrimary
+        border-radius: 10px
+        @media screen and ( max-width: 768px )
+            padding: 15px
+        li
+            display: flex
+            margin-bottom: 20px
+            > a
+                display: flex
+                align-items: center
+                justify-content: center
+                margin-right: 15px
+                height: 50px
+                width: 50px
+                color: $colorPrimary
+                background-color: #fdf1ec
+                border-radius: 100%
+                transition: $stdTransition
+                svg
+                    height: 20px
+                    width: 20px
+                    @media screen and ( max-width: 768px )
+                        height: 18px
+                        width: 18px
+            h5
+                font-size: 24px
+                letter-spacing: normal
+                margin-bottom: 5px
+                color: $softBlack
+                @media screen and ( max-width: 768px )
+                    font-size: 20px
+            span
+                @media screen and ( max-width: 768px )
+                    font-size: 14px
+            &:hover
+                > a
+                    color: white
+                    background-color: $colorPrimary
+                div a
+                    color: $colorPrimary
+    form
+        padding: 30px
+        background-color: white
+        border-top: 3px solid $colorPrimary
+        border-bottom: 3px solid $colorPrimary
+        border-radius: 10px
+        height: 100%
+        @media screen and ( max-width: 768px )
+            margin-top: 30px
+            padding: 15px
+        .form-label
+            margin-bottom: 0
+        .form-control
+            border-radius: 0
+            &:focus
+                border-color: $colorPrimary
+                box-shadow: 0 0 0 0.25rem rgb(235 93 30 / 25%)
+
+section.newsletter
+    text-align: center
+    h3
+        color: black
+    form
+        display: flex
+        width: 100%
+        > div
+            width: 100%
+        .form-control
+            border-radius: 0
+            border: none
+            box-shadow: $stdShadow
+
+footer
+    padding-bottom: 0 !important
+    @media screen and ( max-width: 768px )
+        h5
+            margin-top: 30px
+    .logo
+        font-size: 30px
+        letter-spacing: normal
+        line-height: 30px
+        margin-bottom: 10px
+    span, p
+        font-size: 16px
+        font-weight: 300
+    a
+        font-size: 16px
+        font-weight: 300
+        &:hover
+            color: $colorPrimary
+    .footer-menu
+        a
+            display: block
+            letter-spacing: .5px
+            padding: 5px 0
+            svg
+                font-size: 12px
+                color: $colorPrimary
+                margin-right: 3px
+    .social-media
+        display: flex
+        li
+            margin: 5px
+            a
+                display: flex
+                align-items: center
+                justify-content: center
+                padding: 10px
+                background-color: $colorPrimary
+                border-radius: 100%
+                height: 40px
+                width: 40px
+                transition: $stdTransition
+                border: 1px solid $colorPrimary
+                svg
+                    font-size: 18px
+                    color: white
+                &:hover
+                    background-color: white
+                    svg
+                        color: $colorPrimary
+    .copyright
+        font-size: 14px
+        margin-top: 60px
+
+.back-to-top
+    position: fixed
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: 24px
+    right: 30px
+    bottom: 30px
+    height: 50px
+    width: 50px
+    background-color: $colorPrimary
+    border-radius: 6px
+    color: white
+    cursor: pointer
+    transition: $stdTransition
+    &:hover
+        background-color: #cb3e00
+    @media screen and ( max-width: 768px )
+        font-size: 22px
+        width: 40px
+        height: 40px
+
+@keyframes upDown
+    0%
+        transform: translateY(0)
+    100%
+        transform: translateY(15px)
