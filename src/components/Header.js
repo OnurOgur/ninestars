@@ -22,7 +22,7 @@ function NavBar() {
 		setActive(!isActive)
 	}
 	const toggleDropdown = () => {
-		if (window.innerWidth() < 768) {
+		if (window.innerWidth < 768) {
 			setDropdownActive(!dropdownActive)
 		}	
 	}
