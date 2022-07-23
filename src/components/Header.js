@@ -19,7 +19,9 @@ function NavBar() {
 	}
 
 	const toggleClass = () => {
-		setActive(!isActive)
+		if (window.innerWidth < 768) {
+			setActive(!isActive)
+		}
 	}
 	const toggleDropdown = () => {
 		if (window.innerWidth < 768) {
@@ -58,11 +60,11 @@ function NavBar() {
 						<nav className={isActive ? "active" : null}>
 							<BsX className="menu-close d-block d-md-none" onClick={toggleClass} />
 							<ul>
-								<li><a href="#hero">{t('home')}</a></li>
-								<li><a href="#aboutUs">{t('aboutUs')}</a></li>
-								<li><a href="#services">{t('services')}</a></li>
-								<li><a href="#portfolio">{t('portfolio')}</a></li>
-								<li><a href="#team">{t('team')}</a></li>
+								<li><a href="#hero" onClick={toggleClass}>{t('home')}</a></li>
+								<li><a href="#about" onClick={toggleClass}>{t('aboutUs')}</a></li>
+								<li><a href="#services" onClick={toggleClass}>{t('services')}</a></li>
+								<li><a href="#portfolio" onClick={toggleClass}>{t('portfolio')}</a></li>
+								<li><a href="#team" onClick={toggleClass}>{t('team')}</a></li>
 								<li>
 									<span onClick={toggleDropdown}>{t('dropdown')} <BsChevronDown /></span>
 									<ul className={dropdownActive ? "active dropdown-list" : "dropdown-list"}>
