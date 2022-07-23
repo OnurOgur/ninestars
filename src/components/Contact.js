@@ -28,7 +28,7 @@ function Contact() {
             <Row>
                 <Col sm={12} className="text-center">
                     <h3>{t('contactUs')}</h3>
-                    <h2>{t('contactUsH2')}</h2>
+                    <h2>{t('contactUsH22')}</h2>
                     <div className="line"></div>
                 </Col>
                 <Col md={5}>
